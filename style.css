@@ -1,0 +1,52 @@
+h1, p, * {
+  font-family: sans-serif;
+}
+
+h1 {
+  color: #74bdf4;
+}
+
+html {
+  background-image: url("https://images.pexels.com/photos/317356/pexels-photo-317356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-position: center;
+  background-size: cover;
+}
+
+body {
+  background: white;
+  width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.note {
+  border-bottom: 1px solid #aaa;
+  padding: 15px;
+}
+
+input[type=text] {
+  width: 80%;
+  background: #fefefe;
+  border-radius: 4px;
+  padding: 10px 8px;
+  border: 1px solid #444;
+  font-size: 20px;
+}
+
+button {
+  background: #74bdf4;
+  border-radius: 4px;
+  padding: 10px 8px;
+  border: 1px solid #444;
+  font-size: 18px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+}
