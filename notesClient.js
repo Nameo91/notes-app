@@ -14,7 +14,7 @@ class NotesClient {
       });
   }
 
-  createNote(newNoteFromAPI, displayError) {
+  createNote(newNoteFromAPI, cb, displayError) {
     const content = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -23,11 +23,12 @@ class NotesClient {
     fetch(this.#URL, content)
       .then(response => response.json())
       .then(data => {
-        console.log('New note created!')
+        console.log("Success:",data)
+        cb(data)
       })
       .catch(error => {
-        console.log('error');
-        displayError(error);
+        console.log('error')
+        displayError(error)
     });
   }
 

@@ -1,13 +1,13 @@
 const NotesModel = require('./notesModel')
 
 describe("model",() => {
-  it("returns an empty arry", () => {
+  it("returns an empty array", () => {
     const model = new NotesModel();
 
     expect(model.getNotes()).toEqual([]);
   })
 
-  it("adds some notes and return them", () => {
+  it("adds some notes and return the list of notes", () => {
     const model = new NotesModel();
 
     model.addNote('Buy milk');

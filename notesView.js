@@ -10,27 +10,26 @@ class NotesView {
     this.buttonAddEl.addEventListener('click', () => {
       const newNote = document.querySelector('#note-input').value;
       this.client.createNote((newNote), () => {
-        this.displayError();
+        this.addNewNote(newNote);
+        this.displayNotes();
       });
-      this.addNewNote(newNote);
     });
 
     this.buttonResetEl.addEventListener('click', () => {
       this.client.resetNotes(() => {
-        this.displayError();
+        this.model.reset();
+        this.resetNote();
       })
-      this.resetNote();
     })
   }
   
   addNewNote(newNote) {
     this.model.addNote(newNote);
-    this.displayNotes();
   }
 
   displayNotes() {
     const notes = this.model.getNotes();
-    
+
     this.resetNote();
     
     notes.forEach(note => {
