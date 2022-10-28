@@ -17,7 +17,7 @@ class NotesView {
 
     this.buttonResetEl.addEventListener('click', () => {
       this.client.resetNotes(() => {
-        this.model.reset();
+        this.resetModel();
         this.resetNote();
       })
     })
@@ -45,6 +45,13 @@ class NotesView {
     })
   }
 
+  displayNotesFromApi() {
+    this.client.loadNotes((response) => {
+      this.model.setNotes(response);
+      this.displayNotes();
+    });
+  }
+
   resetNote() {
     const notesEl = document.querySelectorAll('.note');
 
@@ -53,12 +60,8 @@ class NotesView {
     });
   }
 
-  displayNotesFromApi() {
-    this.client.loadNotes((response) => {
-      console.log(response);
-      this.model.setNotes(response);
-      this.displayNotes();
-    })
+  resetModel() {
+    this.model.reset();
   }
   
   displayError() {

@@ -46,7 +46,7 @@ class NotesClient {
     });
   }
 
-  resetNotes(displayError) {
+  resetNotes(cb, displayError) {
     const content = {
       method: 'DELETE'
     }
@@ -55,6 +55,7 @@ class NotesClient {
       .then((response) => response.json())
       .then(data => {
         console.log('All previous notes are deleted!');
+        cb(data);
       })
       .catch(error => {
         console.log('An error occurred')

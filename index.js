@@ -6,10 +6,4 @@ const client = new Notesclient();
 const model = new NotesModel();
 const view = new View(model, client);
 
-client.loadNotes((notes) => {
-  model.setNotes(notes);
-  view.displayNotes();
-}, () => {
-
-  view.displayError();
-});
+view.displayNotesFromApi();
